@@ -10,3 +10,5 @@
 / HomeR GET
 
 /profile ProfileR GET
+
+/cadastro CadastroR GET POST

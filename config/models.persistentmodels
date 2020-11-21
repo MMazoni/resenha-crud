@@ -10,5 +10,9 @@ Email
     email Text
     userId UserId Maybe
     verkey Text Maybe
+Usuario
+    nome Text
+    email Text
+    senha Text
     UniqueEmail email
-
+    deriving Show
