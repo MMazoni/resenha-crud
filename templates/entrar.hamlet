@@ -1,0 +1,13 @@
+$maybe mensa <- msg
+    <div>
+        ^{mensa}
+
+<h1>
+    Login
+
+<form method=post action=@{EntrarR}>
+    ^{widget}
+    <button type="submit" .btn.btn-primary>
+        Entrar
+    <a href="@{CadastroR}">
+        Não possui cadastro?
