@@ -39,7 +39,7 @@ function displayResults(res) {
 
 function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
 
-  var viewUrl = 'book.html?isbn='+bookIsbn; //constructing link for bookviewer
+  var url = window.location.origin; //constructing link for bookviewer
   var htmlCard = `<div class="col-lg-6 mt-4">
     <div class="card" style="">
       <div class="row no-gutters">
@@ -51,7 +51,7 @@ function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
           <h5 class="card-title">${title}</h5>
           <p class="card-text">Author: ${author}</p>
           <p class="card-text">Publisher: ${publisher}</p>
-          <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
+          <a href="${url}/auth/login" class="btn btn-secondary">Read Book</a>
         </div>
       </div>
     </div>
