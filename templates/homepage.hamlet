@@ -1,23 +1,25 @@
-<div #wrapper.container>
-    <!-- Starting
-        ================================================== -->
-    <div .bs-docs-section>
-        <div .row>
-            <div .col-lg-12>
-                <div .page-header>
-                    <h1 #json>Search books
+<main>
+    <div  .container>
+        <h2 .title>
+            Ultimos textos
+        <div .row .card>
+            <div .col>
+                <h3>
+                    Nullam a nisl ut ante blandit hendrerit
+                <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/livros.jpg">
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
+            <div .col>
+                <h3>
+                    Nullam a nisl ut ante blandit hendrerit
+                <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/livros.jpg">
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
+            <div .col>
+                <h3>
+                    Nullam a nisl ut ante blandit hendrerit
+                <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/livros.jpg">
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
+    <div>
 
-
-        <div .row>
-            <div .col-lg-6>
-                <form .form-horizontal ##{queryFormId}>
-                    <div .form-group>
-                        <input ##{queryInputId} .form-control placeholder="Search" required type="text">
-
-                    <button .btn.btn-primary type=submit>
-                        Search
-
-    <hr>
-
-    <main .bs-docs-section>
-       <div ##{booksListId} .row>

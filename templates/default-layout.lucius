@@ -1,4 +1,4 @@
-.masthead,
+/*.masthead,
 .navbar {
     background-color: rgb(27, 28, 29);
 }
@@ -43,7 +43,6 @@
 }
 
 
-/* Common styles for all types */
 .bs-callout {
   padding: 20px;
   margin: 20px 0;
@@ -60,7 +59,6 @@
   border-left-color: #1b809e;
 }
 
-/* Space things out */
 .bs-docs-section {
   margin-bottom: 60px;
 }
@@ -71,3 +69,4 @@
 #message {
     margin-bottom: 40px;
 }
+*/

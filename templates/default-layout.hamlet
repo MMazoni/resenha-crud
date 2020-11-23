@@ -1,36 +1,24 @@
-
-<!-- Static navbar -->
-<nav .navbar.navbar-default.navbar-static-top>
-    <div .container>
-        <div .navbar-header>
-            <button type="button" .navbar-toggle.collapsed data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation
-                <span class="icon-bar">
-                <span class="icon-bar">
-                <span class="icon-bar">
-
-        <div #navbar .collapse.navbar-collapse>
-            <ul .nav.navbar-nav>
-                $forall MenuItem label route _ <- navbarLeftFilteredMenuItems
-                    <li :Just route == mcurrentRoute:.active>
-                        <a href="@{route}">#{label}
-
-            <ul .nav.navbar-nav.navbar-right>
-                $forall MenuItem label route _ <- navbarRightFilteredMenuItems
-                    <li :Just route == mcurrentRoute:.active>
-                        <a href="@{route}">#{label}
-
+<div .line-details>
+<header>
+    <a href="/">
+        <h1>
+            Resenhando
+    <div .subtitle>
+        <h2>
+            UM BLOG DE RESENHA DE LIVROS.
+<nav>
+    <ul>
+        $forall MenuItem label route _ <- navbarFilteredMenuItems
+            <li :Just route == mcurrentRoute:.active>
+                <a href="@{route}">#{label}
 
 $if (Just HomeR == mcurrentRoute)
     ^{widget}
 $else
     <div .container>
-        <div .row>
-            <div .col-md-12>
-                ^{widget}
+        ^{widget}
 
-<!-- Footer -->
 <footer .footer>
-    <div .container>
-        <p .text-muted>
-            #{appCopyright $ appSettings master}
+    <p .text-muted>
+        #{appCopyright $ appSettings master}
+
