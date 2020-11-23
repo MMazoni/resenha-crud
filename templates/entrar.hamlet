@@ -2,12 +2,14 @@ $maybe mensa <- msg
     <div>
         ^{mensa}
 
-<h1>
+<h2 .title>
     Login
 
 <form method=post action=@{EntrarR}>
     ^{widget}
-    <button type="submit" .btn.btn-primary>
-        Entrar
+    <div .row>
+        <div .col>
+            <button type="submit" .btn>
+                Entrar
     <a href="@{CadastroR}">
         Não possui cadastro?

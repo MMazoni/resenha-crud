@@ -26,9 +26,6 @@ postEntrarR :: Handler Html
 postEntrarR = do
     ((result,_),_) <- runFormPost formLogin
     case result of
-        FormSuccess ("root@root.com","root123") -> do
-            setSession "_EMAIL" "root@root.com"
-            redirect AdminR
         FormSuccess (email,senha) -> do
            usuario <- runDB $ getBy (UniqueEmail email)
            case usuario of
@@ -55,10 +52,3 @@ getSairR = do
     deleteSession "_EMAIL"
     redirect HomeR
 
-
-getAdminR :: Handler Html
-getAdminR = do
-    defaultLayout [whamlet|
-        <h1>
-            Bem-vindo, Administrador!
-    |]

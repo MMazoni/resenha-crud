@@ -1,12 +1,12 @@
-$maybe mensa <- msg 
+$maybe mensa <- msg
     <div>
         ^{mensa}
-
-<h1>
+<h2 .title>
     Registro de usuário
 
 <form role=form method=post action=@{CadastroR}>
     ^{widget}
-    <br>
-    <button class="btn btn-primary" type="submit">
-        Cadastrar
+    <div .row>
+        <div .col>
+            <button .btn type="submit">
+                Cadastrar
