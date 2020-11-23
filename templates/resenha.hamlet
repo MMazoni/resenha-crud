@@ -1,0 +1,10 @@
+<h2 .title>
+    Crie sua Resenha
+$maybe email <- sess
+    <form method=post action=@{CriarResenhaR}>
+        ^{widget}
+        <input type=hidden name=autor value="#{email}">
+        <div .row>
+            <div .col>
+                <button type="submit" .btn>
+                    Criar
