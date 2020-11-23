@@ -43,8 +43,7 @@ data MenuItem = MenuItem
     , menuItemAccessCallback :: Bool
     }
 
-data MenuTypes
-    = Navbar MenuItem
+data MenuTypes = Navbar MenuItem
 
 
 -- This is where we define all of the routes in our application. For a full
@@ -62,7 +61,7 @@ data MenuTypes
 mkYesodData "App" $(parseRoutesFile "config/routes.yesodroutes")
 
 -- | A convenient synonym for creating forms.
-type Form x = Html -> MForm (HandlerFor App) (FormResult x, Widget)
+type Form x = Html -> MForm Handler (FormResult x, Widget)
 
 -- | A convenient synonym for database access functions.
 type DB a = forall (m :: * -> *).
@@ -111,6 +110,11 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     }
                 , Navbar $ MenuItem
+                    { menuItemLabel = "Criar Resenha"
+                    , menuItemRoute = CriarResenhaR
+                    , menuItemAccessCallback = isJust muser
+                    }
+                , Navbar $ MenuItem
                     { menuItemLabel = "Entrar"
                     , menuItemRoute = EntrarR
                     , menuItemAccessCallback = isNothing muser
@@ -133,11 +137,8 @@ instance Yesod App where
         -- you to use normal widget features in default-layout.
 
         pc <- widgetToPageContent $ do
-            --addStylesheet $ StaticR css_principal_css
             addStylesheet $ StaticR css_bootstrap_css
-            addStylesheetRemote "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap"
-            --addScriptRemote "https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            --addScriptRemote "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            addStylesheetRemote "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@300;400&display=swap"
             $(widgetFile "default-layout")
         withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
 
@@ -161,7 +162,6 @@ instance Yesod App where
 
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function
-    isAuthorized AdminR _ = isAdmin
 
     isAuthorized _ _ = isUsuario
 
@@ -201,14 +201,6 @@ instance Yesod App where
     makeLogger :: App -> IO Logger
     makeLogger = return . appLogger
 
-
-isAdmin :: Handler AuthResult
-isAdmin = do
-    sess <- lookupSession "_EMAIL"
-    case sess of
-        Nothing -> return AuthenticationRequired
-        Just "root@root.com" -> return Authorized
-        Just _ -> return $ Unauthorized "Você precisa ser admin!"
 
 
 isUsuario :: Handler AuthResult
