@@ -9,7 +9,7 @@ Usuario
     deriving Show
 Resenha
     titulo Text
-    texto Text
+    texto Textarea
     livro Text
     usuarioId UsuarioId
     deriving Show

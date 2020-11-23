@@ -8,12 +8,11 @@ module Handler.CriarResenha where
 
 import Import
 
-formResenha :: Form (Text,Text,Text)
+formResenha :: Form (Text,Textarea,Text)
 formResenha = renderDivs $ (,,)
     <$> areq textField "Titulo" Nothing
-    <*> areq textField "Texto" Nothing
+    <*> areq textareaField "Texto" Nothing
     <*> areq textField "Livro" Nothing
---    <*> areq intField "Autor" Nothing
 
 
 getCriarResenhaR :: Handler Html
@@ -35,11 +34,11 @@ postCriarResenhaR =  do
                 Just email -> do
                     usuario <- runDB $ getBy (UniqueEmail email)
                     case usuario of
+                        Nothing -> redirect HomeR
                         Just (Entity uid _) -> do
-                            runDB $ insertEntity (Resenha titulo texto livro uid)
+                            _ <- runDB $ insertEntity (Resenha titulo texto livro uid)
                             redirect ListarResenhaR
         _ -> redirect CriarResenhaR
 
 
--- error "Not yet implemented: postCriarResenhaR"
 

@@ -13,4 +13,6 @@
 /entrar EntrarR GET POST
 /sair SairR GET
 
-/admin AdminR GET
+/criar-resenha CriarResenhaR GET POST
+/listar-resenhas ListarResenhaR GET
+/listar-resenhas-user ListarResenhaUserR GET
