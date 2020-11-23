@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                Titulo
+            <th>
+                Livro
+            <th>
+                Texto
+            <th>
+
+            <tbody>
+                $forall Entity rid resenha <- resenhas
+                    <tr>
+                        <td>
+                            #{resenhaTitulo resenha}
+
+                        <td>
+                            #{resenhaLivro resenha}
+
+                        <td>
+                            #{resenhaTexto resenha}
+
