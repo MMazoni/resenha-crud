@@ -1,0 +1,9 @@
+<h1>
+    Resenhas de #{usuarioNome usuario}
+
+<ul>
+    $forall (Entity _ _, Entity _ resenha) <- resenhas
+    <li>
+        #{resenhaTitulo resenha}
+        #{resenhaLivro resenha}
+        #{resenhaTexto resenha}
