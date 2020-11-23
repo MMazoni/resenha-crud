@@ -1,18 +1,19 @@
 -- By default this file is used by `persistFileWith` in Model.hs (which is imported by Foundation.hs)
 -- Syntax for this file here: https://github.com/yesodweb/persistent/blob/master/docs/Persistent-entity-syntax.md
 
-User
-    ident Text
-    password Text Maybe
-    UniqueUser ident
-    deriving Typeable
-Email
-    email Text
-    userId UserId Maybe
-    verkey Text Maybe
 Usuario
     nome Text
     email Text
     senha Text
     UniqueEmail email
+    deriving Show
+Resenha
+    titulo Text
+    texto Text
+    livro Text
+    usuarioId UsuarioId
+    deriving Show
+Favorito
+    usuario UsuarioId
+    resenha ResenhaId
     deriving Show
