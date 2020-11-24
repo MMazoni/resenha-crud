@@ -78,6 +78,10 @@ instance Yesod App where
             Nothing -> getApprootText guessApproot app req
             Just root -> root
 
+    errorHandler NotFound = fmap toTypedContent $ defaultLayout $ do
+        setTitle "Página não encontrada"
+        $(widgetFile "error/404")
+
     -- Store session data on the client in encrypted cookies,
     -- default session idle timeout is 120 minutes
     makeSessionBackend :: App -> IO (Maybe SessionBackend)
@@ -110,8 +114,8 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     }
                 , Navbar $ MenuItem
-                    { menuItemLabel = "Criar Resenha"
-                    , menuItemRoute = CriarResenhaR
+                    { menuItemLabel = "Resenha"
+                    , menuItemRoute = ListarResenhaUserR
                     , menuItemAccessCallback = isJust muser
                     }
                 , Navbar $ MenuItem
@@ -248,3 +252,5 @@ unsafeHandler = Unsafe.fakeHandlerGetLogger appLogger
 -- https://github.com/yesodweb/yesod/wiki/Sending-email
 -- https://github.com/yesodweb/yesod/wiki/Serve-static-files-from-a-separate-domain
 -- https://github.com/yesodweb/yesod/wiki/i18n-messages-in-the-scaffolding
+
+
