@@ -11,8 +11,11 @@
 /cadastro CadastroR GET POST
 
 /entrar EntrarR GET POST
-/sair SairR GET
+/sair   SairR   GET
 
-/criar-resenha CriarResenhaR GET POST
-/listar-resenhas ListarResenhaR GET
-/listar-resenhas-user ListarResenhaUserR GET
+/resenha/criar ResenhaR      GET POST
+/resenha ListarResenhaR     GET
+/resenha/usuario       ListarResenhaUserR GET
+/resenha/#ResenhaId/editar  EditarResenhaR GET POST
+/resenha/#ResenhaId/deletar DeletarResenhaR  POST
+

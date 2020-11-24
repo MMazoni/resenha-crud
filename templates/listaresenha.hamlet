@@ -1,23 +1,12 @@
-<table>
-    <thead>
-        <tr>
-            <th>
-                Titulo
-            <th>
-                Livro
-            <th>
-                Texto
-            <th>
+<div .container>
+    $forall Entity rid resenha <- resenhas
+        <ul>
+            <li>
+                #{resenhaTitulo resenha}
 
-            <tbody>
-                $forall Entity rid resenha <- resenhas
-                    <tr>
-                        <td>
-                            #{resenhaTitulo resenha}
+            <li>
+                #{resenhaLivro resenha}
 
-                        <td>
-                            #{resenhaLivro resenha}
-
-                        <td>
-                            #{resenhaTexto resenha}
+            <li>
+                #{resenhaTexto resenha}
 
