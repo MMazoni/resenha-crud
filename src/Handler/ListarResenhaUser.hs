@@ -20,7 +20,7 @@ getListarResenhaUserR = do
                 Nothing -> redirect HomeR
                 Just (Entity uid usuario) -> do
                     let sql = "SELECT ??,?? FROM usuario \
-                        \ INNER JOIN resenha ON resenha.usuarioid = usuario.id \
+                        \ INNER JOIN resenha ON resenha.usuario_id = usuario.id \
                         \ WHERE usuario.id = ?"
                     resenhas <- runDB $ rawSql sql [toPersistValue uid] :: Handler [(Entity Usuario, Entity Resenha)]
                     defaultLayout $ do

@@ -1,4 +1,27 @@
-<h1>
+<h2 .title>
     Resenhas de #{usuarioNome usuario}
 
+<a href="@{ResenhaR}">
+    Criar resenha
 
+<br>
+
+$forall (Entity _ _, Entity id resenha) <- resenhas
+    <h5>
+        #{resenhaTitulo resenha}
+    <h5>
+        #{resenhaLivro resenha}
+    <p>
+        #{resenhaTexto resenha}
+
+    <a href="@{EditarResenhaR id}">
+        Editar
+
+    <form method=post action=@{FavoritoR id}>
+        <button type="submit">
+            Leia mais tarde
+
+    <form method=post action=@{DeletarResenhaR id}>
+        <button type="submit">
+            X
+    <br>
