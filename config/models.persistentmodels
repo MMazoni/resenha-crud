@@ -17,3 +17,7 @@ Favorito
     usuario UsuarioId
     resenha ResenhaId
     deriving Show
+Classificacao
+    resenha ResenhaId
+    classificacao Int
+    deriving Show
