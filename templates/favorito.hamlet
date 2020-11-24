@@ -1,0 +1,11 @@
+<h2 .title>
+    Favoritos de #{usuarioNome usuario}
+
+$forall (Entity _ _, Entity id resenha) <- favoritos
+    <h5>
+        #{resenhaTitulo resenha}
+    <h5>
+        #{resenhaLivro resenha}
+    <p>
+        #{resenhaTexto resenha}
+    <br>
