@@ -3,10 +3,14 @@
         <h2 .title>
             Últimos textos
         <div .row .card>
-            $forall Entity rid resenha <- resenhas
+            $forall (Entity rid resenha, Entity _ usuario) <- resenhas
                 <div .col>
                     <h3>
-                        #{resenhaTitulo resenha}
+                        #{resenhaTitulo resenha} - #{usuarioNome usuario}
+                        <div .col-header>
+                            <form method=post action=@{FavoritoR rid}>
+                                <button class="btn-primary" type="submit">
+                                    Leia mais tarde
                     <h4>
                         #{resenhaLivro resenha}
                     <p>

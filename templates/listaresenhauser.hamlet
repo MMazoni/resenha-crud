@@ -12,9 +12,6 @@ $forall (Entity _ _, Entity id resenha) <- resenhas
                     <span>
                         - #{resenhaLivro resenha}
             <div .col-header>
-                <form method=post action=@{FavoritoR id}>
-                    <button class="btn-primary" type="submit">
-                        Leia mais tarde
                 <a class="btn-success" href="@{EditarResenhaR id}">
                     Editar
                 <form method=post action=@{DeletarResenhaR id}>
