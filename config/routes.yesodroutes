@@ -14,10 +14,10 @@
 /sair   SairR   GET
 
 /resenha/criar ResenhaR GET POST
-/resenha ListarResenhaR GET
 /resenha/usuario ListarResenhaUserR GET
 /resenha/#ResenhaId/editar  EditarResenhaR GET POST
 /resenha/#ResenhaId/deletar DeletarResenhaR  POST
 
 /favorito/#ResenhaId FavoritoR POST
 /favorito ListarFavoritoR GET
+/favorito/#FavoritoId/deletar DeletarFavoritoR  POST

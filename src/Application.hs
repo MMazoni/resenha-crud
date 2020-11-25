@@ -45,7 +45,6 @@ import Handler.Home
 import Handler.Cadastro
 import Handler.Entrar
 import Handler.Resenha
-import Handler.ListarResenha
 import Handler.ListarResenhaUser
 import Handler.Favorito
 
