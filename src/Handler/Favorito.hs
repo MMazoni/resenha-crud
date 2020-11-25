@@ -19,9 +19,9 @@ getListarFavoritoR = do
             case usu of
                 Nothing -> redirect HomeR
                 Just (Entity uid usuario) -> do
-                    let sql = "SELECT ??, ?? FROM resenha \
-                        \ INNER JOIN favorito on favorito.resenha_id = resenha.id \
-                        \ WHERE favorito.usuario_id = ??"
+                    let sql = "SELECT ??,?? FROM resenha \
+                        \ INNER JOIN favorito on favorito.resenha = resenha.id \
+                        \ WHERE favorito.usuario = ?"
                     favoritos <- runDB $ rawSql sql [toPersistValue uid] :: Handler [(Entity Favorito, Entity Resenha)]
                     defaultLayout $ do
                         $(widgetFile "favorito")
