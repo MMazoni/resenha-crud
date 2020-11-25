@@ -1,11 +1,20 @@
 <h2 .title>
-    Favoritos de #{usuarioNome usuario}
+    Leia mais tarde
 
-$forall (Entity _ _, Entity id resenha) <- favoritos
-    <h5>
-        #{resenhaTitulo resenha}
-    <h5>
-        #{resenhaLivro resenha}
-    <p>
-        #{resenhaTexto resenha}
-    <br>
+<br>
+
+$forall (Entity fid _, Entity _ resenha) <- favoritos
+    <div .accordion>
+        <div .accordion-header>
+            <div .col-header>
+                <h5>
+                    #{resenhaTitulo resenha}
+                    <span>
+                        - #{resenhaLivro resenha}
+            <div .col-header>
+                <form method=post action=@{DeletarFavoritoR fid}>
+                    <button  type="submit">
+                        Excluir
+        <div .accordion-body>
+            <p>
+                #{resenhaTexto resenha}

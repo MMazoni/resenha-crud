@@ -9,6 +9,13 @@ module Handler.Favorito where
 import Import
 import Database.Persist.Sql
 
+
+postDeletarFavoritoR :: FavoritoId -> Handler Html
+postDeletarFavoritoR favId = do
+    runDB $ delete favId
+    redirect ListarFavoritoR
+
+
 getListarFavoritoR :: Handler Html
 getListarFavoritoR = do
     sess <- lookupSession "_EMAIL"
