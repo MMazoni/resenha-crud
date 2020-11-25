@@ -1,25 +1,13 @@
 <main>
     <div  .container>
         <h2 .title>
-            Ultimos textos
+            Últimos textos
         <div .row .card>
-            <div .col>
-                <h3>
-                    Nullam a nisl ut ante blandit hendrerit
-                <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/livros.jpg">
-                <p>
-                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
-            <div .col>
-                <h3>
-                    Nullam a nisl ut ante blandit hendrerit
-                <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/livros.jpg">
-                <p>
-                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
-            <div .col>
-                <h3>
-                    Nullam a nisl ut ante blandit hendrerit
-                <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/livros.jpg">
-                <p>
-                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
-    <div>
-
+            $forall Entity rid resenha <- resenhas
+                <div .col>
+                    <h3>
+                        #{resenhaTitulo resenha}
+                    <h4>
+                        #{resenhaLivro resenha}
+                    <p>
+                        #{resenhaTexto resenha}

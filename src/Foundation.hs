@@ -114,8 +114,18 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     }
                 , Navbar $ MenuItem
+                    { menuItemLabel = "Criar Resenha"
+                    , menuItemRoute = ResenhaR
+                    , menuItemAccessCallback = isJust muser
+                    }
+                , Navbar $ MenuItem
                     { menuItemLabel = "Resenha"
                     , menuItemRoute = ListarResenhaUserR
+                    , menuItemAccessCallback = isJust muser
+                    }
+                , Navbar $ MenuItem
+                    { menuItemLabel = "Favoritos"
+                    , menuItemRoute = ListarFavoritoR
                     , menuItemAccessCallback = isJust muser
                     }
                 , Navbar $ MenuItem

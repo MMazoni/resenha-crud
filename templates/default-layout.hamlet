@@ -2,7 +2,10 @@
 <header>
     <a href="/">
         <h1>
-            Resenhando
+            R
+            <span .danger>
+                .
+            esenhando
     <div .subtitle>
         <h2>
             UM BLOG DE RESENHA DE LIVROS.

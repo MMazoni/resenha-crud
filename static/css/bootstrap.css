@@ -78,7 +78,9 @@ h1{
 .line-details{
   width: 100%;
   height: 4px;
-  background: transparent linear-gradient(90deg, #ff4b4b 0%, #36000f 100%) 0% 0% no-repeat padding-box;
+  position: fixed;
+  top: 0;
+  background: #383838;
 }
 
 
@@ -139,7 +141,7 @@ header{
 
 nav{
   margin-top: 55px;
-    background: transparent linear-gradient(90deg, #ff4b4b 0%, #36000f 100%) 0% 0% no-repeat padding-box;
+    background: #383838;
     height: 60px;
     padding: 20px 55px;
 }
@@ -263,4 +265,68 @@ footer{
 footer p {
   margin: 0;
   text-align: right;
+}
+
+.accordion{
+  border: solid 1px #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.accordion-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-header  .col-header:last-child{
+  display: flex;
+}
+
+.accordion-header .col-header form{
+  /*width: 100px;*/
+  margin: 0;
+  width: auto;
+}
+
+.btn-success{
+  background: #38b538 !important;
+}
+
+.btn-primary{
+  background: #383838 !important;
+}
+
+.danger{
+  color: #be3838;
+}
+.accordion-header .col-header a, .accordion-header .col-header button{
+  background: #a33939;
+  /*width: 220px;*/
+  font-size: 14px;
+  text-align: center;
+  height: 35px;
+  padding: 9px;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  margin-right: 10px;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-danger hr {
+  border-top-color: #f1b0b7;
 }

@@ -1,27 +1,25 @@
 <h2 .title>
-    Resenhas de #{usuarioNome usuario}
-
-<a href="@{ResenhaR}">
-    Criar resenha
+    Minhas Resenhas
 
 <br>
 
 $forall (Entity _ _, Entity id resenha) <- resenhas
-    <h5>
-        #{resenhaTitulo resenha}
-    <h5>
-        #{resenhaLivro resenha}
-    <p>
-        #{resenhaTexto resenha}
-
-    <a href="@{EditarResenhaR id}">
-        Editar
-
-    <form method=post action=@{FavoritoR id}>
-        <button type="submit">
-            Leia mais tarde
-
-    <form method=post action=@{DeletarResenhaR id}>
-        <button type="submit">
-            X
-    <br>
+    <div .accordion>
+        <div .accordion-header>
+            <div .col-header>
+                <h5>
+                    #{resenhaTitulo resenha}
+                    <span>
+                        - #{resenhaLivro resenha}
+            <div .col-header>
+                <form method=post action=@{FavoritoR id}>
+                    <button class="btn-primary" type="submit">
+                        Leia mais tarde
+                <a class="btn-success" href="@{EditarResenhaR id}">
+                    Editar
+                <form method=post action=@{DeletarResenhaR id}>
+                    <button  type="submit">
+                        Excluir
+        <div .accordion-body>
+            <p>
+                #{resenhaTexto resenha}
