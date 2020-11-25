@@ -71,5 +71,5 @@ postEditarResenhaR rid = do
 
 postDeletarResenhaR :: ResenhaId -> Handler Html
 postDeletarResenhaR rid = do
-    runDB $ delete rid
+    runDB $ deleteCascade rid
     redirect ListarResenhaUserR
