@@ -1,3 +1,19 @@
+## R.ESENHANDO - BLOG DE RESENHA DE LIVROS
+(R.ESENHANDO - Books Review Blog)
+
+## Build with:
+* Haskell purely functional programming language
+* Yesod Web Framework
+* Cascading Style Sheets (CSS)
+
+## Contribuitors
+* **Fabio Sales de Almeida** - [fsalesalmeida](https://github.com/fsalesalmeida)
+* **Jonas Navarro Alvarenga** - [jonasbrazil](https://github.com/jonasbrazil)
+* **Matheus Mazoni de Andrade** - [MMazoni](https://github.com/MMazoni)
+
+## Deployed Application on Heroku
+[crud-resenha.herokuapp.com](http://crud-resenha.herokuapp.com/)
+
 ## Database Setup
 
 After installing Postgres, run:
